@@ -6,8 +6,8 @@
   "title": {
     "text": "Eating out and health spending have roughly doubled since 2013",
     "subtitle": [
-      "Monthly spending in nine categories tracked by the ABS indicator, seasonally adjusted, current prices.",
-      "Each band's thickness is its monthly spending. Click a band to highlight it; double-click to reset."
+      "Monthly spending by category; band thickness shows the amount spent.",
+      "Click a band to highlight it; double-click to reset."
     ]
   },
   "config": {
