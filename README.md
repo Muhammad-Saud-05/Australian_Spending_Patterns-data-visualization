@@ -31,7 +31,7 @@ The page is organised into four parts:
 ## Project structure
 
 ```
-dv2-spending/
+docs/
 ├── index.html          # Page layout, story text and data sources
 ├── style.css           # Page styling
 ├── vega_lite_vis.js    # Loads and embeds the 12 chart specs
@@ -51,7 +51,7 @@ dv2-spending/
 The page loads chart specs and data with `fetch`, so it must be served over HTTP. Opening `index.html` directly from disk won't work.
 
 ```bash
-cd dv2-spending
+cd docs
 python -m http.server 8000
 ```
 
