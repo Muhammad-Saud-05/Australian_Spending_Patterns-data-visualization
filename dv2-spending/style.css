@@ -125,7 +125,9 @@ main > .section:first-child { border-top: 0; }
 .row--side { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gap); align-items: start; }
 .row--side .chart { grid-column: 1 / span 2; }
 .row--side .text { grid-column: 3; padding-top: 4px; }   /* top lines up with the chart title */
-.row--stack .text { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gap); row-gap: 0; margin-bottom: 24px; align-items: start; }
+.row--stack .text { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 64px; row-gap: 0; margin-bottom: 24px; align-items: start; }
+.row--stack .text:has(p:nth-of-type(2):last-of-type) { grid-template-columns: repeat(2, minmax(0, 1fr)); }   /* two paragraphs: half the width each */
+.row--stack .text p { max-width: 36em; }   /* cap line length (about 65 characters) so lines stay easy to follow */
 .row--stack .text h3 { grid-column: 1 / -1; }
 .row--stack .text p { margin: 0; }
 .text h3 { margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
