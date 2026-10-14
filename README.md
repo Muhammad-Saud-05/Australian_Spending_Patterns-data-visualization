@@ -6,7 +6,7 @@ An interactive data-visualisation web page on consumer spending in Australia, bu
 
 The page is organised into four parts:
 
-1. **The big picture** – total monthly spending (about $82bn in August 2026, nearly double July 2012) and the share going to each category.
+1. **The big picture** – total monthly spending (about $82bn in August 2026, up about 35% on July 2012 after adjusting for inflation) and the share going to each category.
 2. **Composition over time** – how category ranks and sizes have changed.
 3. **Across Australia** – growth and spending by state.
 4. **Shifting priorities** – changes in spending share, the December effect, and the split between "wants" and "needs".
@@ -15,7 +15,7 @@ The page is organised into four parts:
 
 | # | Chart | Type |
 |---|-------|------|
-| 1 | Total spending | Line |
+| 1 | Total spending (price-adjusted) | Line |
 | 2 | Spending shares | Radial |
 | 3 | Category rank | Bump |
 | 4 | Category spending over time | Stream graph |

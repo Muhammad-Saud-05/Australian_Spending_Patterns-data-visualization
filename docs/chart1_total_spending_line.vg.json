@@ -3,9 +3,9 @@
   "width": 800,
   "height": 360,
   "title": {
-    "text": "Australians now spend about $82 billion a month, nearly double 2012",
+    "text": "After price rises, Australians spend about 35% more a month than in 2012",
     "subtitle": [
-      "Total tracked spending a month.",
+      "Total tracked spending a month, seasonally adjusted, with price rises removed (in August 2026 dollars).",
       "The vertical axis starts at $40 billion, not $0."
     ]
   },
@@ -34,7 +34,7 @@
     }
   },
   "data": {
-    "url": "data/total_monthly.csv",
+    "url": "data/total_monthly_real.csv",
     "format": {
       "parse": {
         "date": "date:'%Y-%m-%d'"
@@ -43,13 +43,13 @@
   },
   "transform": [
     {
-      "calculate": "datum.total_sa_m / 1000",
-      "as": "total_bn"
+      "calculate": "datum.real_sa_m / 1000",
+      "as": "real_bn"
     }
   ],
   "layer": [
     {
-      "description": "The line itself",
+      "description": "Spending a month with price rises removed (August 2026 dollars)",
       "mark": {
         "type": "line",
         "color": "#333333",
@@ -67,9 +67,9 @@
           }
         },
         "y": {
-          "field": "total_bn",
+          "field": "real_bn",
           "type": "quantitative",
-          "title": "Spending per month ($ billion)",
+          "title": "Spending per month ($ billion, price-adjusted)",
           "scale": {
             "domain": [
               40,
@@ -104,7 +104,7 @@
           "type": "temporal"
         },
         "y": {
-          "field": "total_bn",
+          "field": "real_bn",
           "type": "quantitative"
         },
         "tooltip": [
@@ -115,9 +115,9 @@
             "format": "%b %Y"
           },
           {
-            "field": "total_bn",
+            "field": "real_bn",
             "type": "quantitative",
-            "title": "Spending ($ billion)",
+            "title": "Spending, price-adjusted ($ billion)",
             "format": ".1f"
           }
         ]
@@ -129,15 +129,15 @@
         "values": [
           {
             "date": "2012-07-01",
-            "total_bn": 43.7
+            "real_bn": 61.1
           },
           {
             "date": "2020-04-01",
-            "total_bn": 41.8
+            "real_bn": 52.6
           },
           {
             "date": "2026-08-01",
-            "total_bn": 82.3
+            "real_bn": 82.3
           }
         ],
         "format": {
@@ -158,7 +158,7 @@
           "type": "temporal"
         },
         "y": {
-          "field": "total_bn",
+          "field": "real_bn",
           "type": "quantitative"
         }
       }
@@ -169,12 +169,12 @@
         "values": [
           {
             "date": "2012-07-01",
-            "y_label": 41.9,
-            "text": "Jul 2012: $43.7bn"
+            "y": 59.3,
+            "text": "Jul 2012: $61.1bn"
           },
           {
             "date": "2020-04-01",
-            "y_label": 42.6,
+            "y": 49.8,
             "text": [
               "COVID-19 lockdowns,",
               "April 2020"
@@ -201,7 +201,7 @@
           "type": "temporal"
         },
         "y": {
-          "field": "y_label",
+          "field": "y",
           "type": "quantitative"
         },
         "text": {
@@ -210,13 +210,16 @@
       }
     },
     {
-      "description": "Annotations that sit to the left of their anchor point",
+      "description": "Annotation that sits to the left of its anchor point",
       "data": {
         "values": [
           {
             "date": "2026-08-01",
-            "y_label": 86.5,
-            "text": "Aug 2026: $82.3bn (+88% since Jul 2012)"
+            "y": 86.5,
+            "text": [
+              "Aug 2026: $82.3bn",
+              "+35% since Jul 2012 after price rises"
+            ]
           }
         ],
         "format": {
@@ -239,7 +242,7 @@
           "type": "temporal"
         },
         "y": {
-          "field": "y_label",
+          "field": "y",
           "type": "quantitative"
         },
         "text": {
