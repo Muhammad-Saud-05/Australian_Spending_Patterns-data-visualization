@@ -21,7 +21,7 @@
       "tickColor": "#999999"
     },
     "title": {
-      "anchor": "start",
+      "anchor": "middle",
       "fontSize": 18,
       "subtitleFontSize": 12,
       "subtitleColor": "#555555",

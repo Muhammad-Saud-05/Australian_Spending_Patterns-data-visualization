@@ -16,7 +16,7 @@
     "font": "Arial, Helvetica, sans-serif",
     "view": { "stroke": null },
     "title": {
-      "anchor": "start",
+      "anchor": "middle",
       "fontSize": 18,
       "subtitleFontSize": 12,
       "subtitleColor": "#555555",
