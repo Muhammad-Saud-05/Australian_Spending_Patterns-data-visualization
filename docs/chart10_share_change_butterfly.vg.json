@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 640,
   "height": { "step": 28 },
-  "padding": { "right": 95 },
+  "padding": { "left": 10, "right": 10 },
   "title": {
     "text": [
       "Housing and health take a bigger share of spending than 30 years ago;",

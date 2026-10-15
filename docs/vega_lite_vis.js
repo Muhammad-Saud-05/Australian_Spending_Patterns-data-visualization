@@ -25,47 +25,41 @@ var embed_options = { actions: false };
 var FONT_TEXT = '"Source Sans 3", "Helvetica Neue", Arial, sans-serif';
 var FONT_TITLE = '"Fraunces", Georgia, "Times New Roman", serif';
 
-// ---- Special feature 3: keep text lines short, as the Week 4 readability rules ask --------
-// The lecture rule is about 60 characters (7 to 10 words) a line. Chart titles and subtitles
-// are re-broken here so no line is longer than that, whatever the chart file says. Each
-// subtitle sentence stays its own paragraph. Change these two numbers to loosen the rule.
-var TITLE_MAX = 56;     // 18 px headline lines
-var SUBTITLE_MAX = 64;  // 12 px subtitle lines
-
-function wrapText(text, max) {
-  var words = String(text).split(/\s+/).filter(Boolean);
-  var lines = [], current = "";
-  words.forEach(function (word) {
-    var next = current ? current + " " + word : word;
-    if (current && next.length > max) { lines.push(current); current = word; }
-    else { current = next; }
-  });
-  if (current) { lines.push(current); }
-  // Avoid a short last line (a "widow"): share the last two lines evenly instead.
-  var n = lines.length;
-  if (n > 1 && lines[n - 1].length < max * 0.4) {
-    var both = (lines[n - 2] + " " + lines[n - 1]).split(" ");
-    var half = Math.ceil((both.join(" ").length) / 2), first = "";
-    while (both.length && (first + " " + both[0]).trim().length <= half + 6) {
-      first = (first + " " + both.shift()).trim();
-    }
-    if (both.length) { lines.splice(n - 2, 2, first, both.join(" ")); }
-  }
-  return lines;
+// ---- Special feature 3: chart titles are drawn as HTML above each chart ---------------
+// A title inside a Vega chart can only be centred over the plot, which pulls it off the middle
+// of the card whenever labels hang off one side. Here the title is lifted out of the chart file
+// (the JSON files are unchanged) and shown as a centred block: the headline is centred and the
+// subtitle is left-aligned inside a block that is itself centred, which keeps it easy to read.
+function pullTitle(spec) {
+  var t = spec.title;
+  if (!t) { return null; }
+  if (typeof t === "string") { t = { text: t }; }
+  delete spec.title;
+  return {
+    headline: Array.isArray(t.text) ? t.text.join(" ") : t.text,
+    subtitle: t.subtitle ? [].concat(t.subtitle) : []
+  };
 }
 
-function wrapTitles(spec) {
-  var t = spec.title;
-  if (!t) { return spec; }
-  if (typeof t === "string") { t = { text: t }; }
-  var headline = Array.isArray(t.text) ? t.text.join(" ") : t.text;
-  t.text = wrapText(headline, TITLE_MAX);
-  if (t.subtitle) {
-    var parts = Array.isArray(t.subtitle) ? t.subtitle : [t.subtitle];
-    t.subtitle = [].concat.apply([], parts.map(function (part) { return wrapText(part, SUBTITLE_MAX); }));
+function showTitle(target, info) {
+  var holder = document.querySelector(target);
+  if (!info || !holder) { return; }
+  var box = document.createElement("div");
+  box.className = "chart-title";
+  var h = document.createElement("h4");
+  h.textContent = info.headline;
+  box.appendChild(h);
+  if (info.subtitle.length) {
+    var sub = document.createElement("div");
+    sub.className = "chart-subtitle";
+    info.subtitle.forEach(function (line) {
+      var p = document.createElement("p");
+      p.textContent = line;
+      sub.appendChild(p);
+    });
+    box.appendChild(sub);
   }
-  spec.title = t;
-  return spec;
+  holder.parentNode.insertBefore(box, holder);
 }
 
 function applyPageFonts(spec) {
@@ -101,7 +95,10 @@ function drawChart(i) {
       if (!response.ok) { throw new Error(specs[i] + " returned " + response.status); }
       return response.json();
     })
-    .then(function (spec) { return vegaEmbed(target, wrapTitles(applyPageFonts(spec)), embed_options); })
+    .then(function (spec) {
+      var info = pullTitle(spec);
+      return vegaEmbed(target, applyPageFonts(spec), embed_options).then(function (result) { showTitle(target, info); return result; });
+    })
     .then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     })
