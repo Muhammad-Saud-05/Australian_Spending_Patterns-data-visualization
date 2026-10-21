@@ -98,7 +98,6 @@ body {
 .stat-number { display: block; font-family: var(--display); font-weight: 600; font-size: 44px; line-height: 1.1; color: #fff; }
 .stat-label { display: block; margin: 6px auto 0; max-width: 17em; font-size: 16px; line-height: 1.4; color: var(--hero-muted); }
 
-/* ---------- Cards: one shared look for the terms box and every chart ---------- */
 .guide { padding: 40px 0 0; }
 .guide-card, .row {
   background: var(--card);
@@ -118,14 +117,14 @@ body {
 .terms dt { font-weight: 700; color: var(--ink); font-size: 16px; }
 .terms dd { margin: 4px 0 0; font-size: 15.5px; line-height: 1.4; color: var(--text); }
 
-/* ---------- Sections: centred heading, then one card per chart ---------- */
+
 .section { padding: 72px 0 0; }
 .section-head { margin: 0 0 32px; text-align: center; }
 .section-number { display: block; margin: 0 0 8px; font-family: var(--display); font-size: 20px; color: var(--muted); }
 .section h2 { margin: 0; font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4vw, 40px); line-height: 1.15; color: var(--ink); }
 .section-question { margin: 10px auto 0; max-width: 26em; font-size: 20px; line-height: 1.35; color: var(--muted); text-wrap: balance; }
 
-/* every chart card has the same order: title and text on top, chart centred below */
+
 .row { display: flex; flex-direction: column; margin-top: 28px; }
 .section-head + .row { margin-top: 0; }
 .row .text { order: 1; width: 100%; max-width: 40em; margin: 0 auto 28px; }

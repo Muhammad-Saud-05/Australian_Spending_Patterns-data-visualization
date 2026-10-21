@@ -1,5 +1,3 @@
-// Same idea as the course guide (Section 1.3, Step 2): one variable per chart file,
-// then vegaEmbed puts each chart into the element with the matching id.
 var vg_1 = "chart1_total_spending_line.vg.json";
 var vg_2 = "chart2_spending_shares_radial.vg.json";
 var vg_3 = "chart3_category_rank_bump.vg.json";
@@ -15,21 +13,12 @@ var vg_12 = "chart12_wants_share_waffle.vg.json";
 
 var specs = [vg_1, vg_2, vg_3, vg_4, vg_5, vg_6, vg_7, vg_8, vg_9, vg_10, vg_11, vg_12];
 
-// Not in the guide text: actions:false hides the small "..." menu on each chart.
 var embed_options = { actions: false };
 
-// ---- Special feature 1: one place to set the typefaces for all 12 charts --------------
-// The chart files still say "Arial". Before drawing, this script reads each file, swaps in
-// the page's two typefaces (headings: Fraunces, everything else: Source Sans 3) and then
-// draws it. The JSON files in the repository are unchanged and stay readable.
 var FONT_TEXT = '"Source Sans 3", "Helvetica Neue", Arial, sans-serif';
 var FONT_TITLE = '"Fraunces", Georgia, "Times New Roman", serif';
 
-// ---- Special feature 3: chart titles are drawn as HTML above each chart ---------------
-// A title inside a Vega chart can only be centred over the plot, which pulls it off the middle
-// of the card whenever labels hang off one side. Here the title is lifted out of the chart file
-// (the JSON files are unchanged) and shown as a centred block: the headline is centred and the
-// subtitle is left-aligned inside a block that is itself centred, which keeps it easy to read.
+
 function pullTitle(spec) {
   var t = spec.title;
   if (!t) { return null; }
@@ -73,9 +62,6 @@ function applyPageFonts(spec) {
   return spec;
 }
 
-// ---- Special feature 2: wait for the fonts before drawing -----------------------------
-// Charts measure their text when they are drawn. If the fonts arrive late, labels can be
-// measured with the wrong font. We wait (at most 4 seconds) for the fonts to load first.
 function fontsReady() {
   if (!document.fonts || !document.fonts.load) { return Promise.resolve(); }
   var loading = Promise.all([
@@ -100,7 +86,7 @@ function drawChart(i) {
       return vegaEmbed(target, applyPageFonts(spec), embed_options).then(function (result) { showTitle(target, info); return result; });
     })
     .then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+
     })
     .catch(function (error) {
       console.error(specs[i], error);
