@@ -112,7 +112,7 @@
               "Eating out",
               "Miscellaneous"
             ],
-            "range": ["#f28c1e", "#5f8a1c", "#ae8e5f", "#53b7f3", "#1fa58e", "#1197fd", "#9014a2", "#74d8e3", "#9dd6ae"]
+            "range": ["#E6C200", "#9AA72A", "#333333", "#8C5A3C", "#00A99D", "#F28C1E", "#7B3FA0", "#E056A8", "#B8860B"]
           },
           "legend": null
         }
@@ -152,7 +152,7 @@
               "Eating out",
               "Miscellaneous"
             ],
-            "range": ["#f28c1e", "#5f8a1c", "#ae8e5f", "#53b7f3", "#1fa58e", "#1197fd", "#9014a2", "#74d8e3", "#9dd6ae"]
+            "range": ["#E6C200", "#9AA72A", "#333333", "#8C5A3C", "#00A99D", "#F28C1E", "#7B3FA0", "#E056A8", "#B8860B"]
           },
           "legend": null
         },

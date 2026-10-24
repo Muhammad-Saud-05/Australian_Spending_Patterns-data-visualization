@@ -62,8 +62,8 @@
               "Furnishings", "Miscellaneous", "Recreation", "Eating out"
             ],
             "range": [
-              "#d95f02", "#1f78b4", "#e6ab02", "#1b9e77", "#fb9a99",
-              "#cab2d6", "#a6761d", "#e7298a", "#a6cee3"
+              "#E6C200", "#F28C1E", "#333333", "#00A99D", "#9AA72A",
+              "#8C5A3C", "#B8860B", "#7B3FA0", "#E056A8"
             ]
           }
         },
