@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
+  "width": 666,
   "height": 360,
   "title": {
     "text": "After price rises, Australians spend about 35% more a month than in 2012",

@@ -60,7 +60,7 @@
           "type": "quantitative",
           "title": "Average spending a month ($ billion)",
           "scale": { "type": "linear", "domain": [0, 25.16], "range": [0, 5200] },
-          "legend": { "orient": "bottom", "direction": "horizontal", "values": [1, 5, 10, 20], "symbolFillColor": "#333333" }
+          "legend": { "orient": "none", "legendX": -120, "legendY": 0, "direction": "vertical", "values": [1, 5, 10, 20], "symbolFillColor": "#333333" }
         },
         "tooltip": [
           { "field": "state", "type": "nominal", "title": "State" },

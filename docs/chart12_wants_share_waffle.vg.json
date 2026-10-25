@@ -78,8 +78,9 @@
           "range": ["#4d4d4d", "#d9d9d9"]
         },
         "legend": {
-          "orient": "bottom",
+          "orient": "top",
           "direction": "horizontal",
+          "titleLimit": 400,
           "symbolType": "square",
           "symbolSize": 200,
           "titleFontSize": 12,

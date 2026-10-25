@@ -129,7 +129,7 @@ body {
 .section-head + .row { margin-top: 0; }
 .row .text { order: 1; width: 100%; max-width: 40em; margin: 0 auto 28px; }
 .row .chart { order: 2; }
-.text h3 { margin: 0 0 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-align: center; }
+.text h3 { margin: 0 0 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-align: left; }
 .text p { margin: 0 0 12px; font-size: 17.5px; line-height: 1.4; text-wrap: pretty; orphans: 2; widows: 2; }
 .text p:last-child { margin-bottom: 0; }
 .text strong { color: var(--ink); font-weight: 700; }
@@ -152,9 +152,9 @@ body {
 
 
 .chart { margin: 0; max-width: 100%; overflow-x: auto; overflow-y: hidden; min-height: 120px; align-self: center; }   /* the chart sits in the middle of its card */
-.chart-title { order: 2; width: 100%; margin: 0 0 20px; text-align: center; }
-.chart-title h4 { margin: 0 auto 10px; max-width: 30em; font-family: var(--display); font-weight: 600; font-size: 20px; line-height: 1.25; color: var(--ink); text-wrap: balance; }
-.chart-subtitle { width: fit-content; max-width: 36em; margin: 0 auto; text-align: left; font-size: 14px; line-height: 1.4; color: #555; }   /* left-aligned lines, block centred */
+.chart-title { order: 2; width: 100%; max-width: 40em; margin: 0 auto 20px; text-align: left; }   /* same column and left edge as the text block */
+.chart-title h4 { margin: 0 0 10px; font-family: var(--display); font-weight: 600; font-size: 17px; line-height: 1.25; color: var(--ink); text-wrap: balance; }
+.chart-subtitle { margin: 0; text-align: left; font-size: 14px; line-height: 1.4; color: #555; }   /* left-aligned lines, block centred */
 .chart-subtitle p { margin: 0 0 4px; text-wrap: pretty; }
 .chart-subtitle p:last-child { margin-bottom: 0; }
 .chart-error { margin: 0; padding: 16px 0; color: #8a1c1c; font-size: 15px; }
