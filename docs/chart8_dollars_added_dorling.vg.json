@@ -47,7 +47,7 @@
           "type": "quantitative",
           "title": "Extra spending ($ billion)",
           "scale": { "type": "linear", "domain": [0, 14.77], "range": [0, 12000] },
-          "legend": { "orient": "none", "legendX": -120, "legendY": 262, "values": [1, 5, 10], "symbolFillColor": "#dddddd" }
+          "legend": { "orient": "none", "legendX": 0, "legendY": 262, "values": [1, 5, 10], "symbolFillColor": "#dddddd" }
         },
         "color": {
           "field": "growth_pct",
@@ -58,7 +58,7 @@
             "domain": [5, 6, 7.5],
             "range": ["#eeeeee","#c4c4c4","#8a8a8a","#444444"]
           },
-          "legend": { "orient": "none", "legendX": -120, "legendY": 0, "format": ".1f" }
+          "legend": { "orient": "none", "legendX": 0, "legendY": 0, "format": ".1f" }
         },
         "tooltip": [
           { "field": "state", "type": "nominal", "title": "State" },
