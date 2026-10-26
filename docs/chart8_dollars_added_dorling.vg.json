@@ -100,7 +100,7 @@
         },
         { "calculate": "format(datum.growth_pct, '.1f') + '%'", "as": "growth_label" }
       ],
-      "mark": { "type": "text", "align": "center", "baseline": "middle", "dy": 7, "fontSize": 10 },
+      "mark": { "type": "text", "align": "center", "baseline": "middle", "dy": 7, "fontSize": 11 },
       "encoding": {
         "x": { "field": "x", "type": "quantitative", "scale": { "domain": [0, 600], "nice": false, "zero": false }, "axis": null },
         "y": { "field": "y", "type": "quantitative", "scale": { "domain": [492, 0], "nice": false, "zero": false }, "axis": null },

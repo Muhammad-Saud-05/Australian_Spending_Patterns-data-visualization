@@ -62,7 +62,8 @@ body {
 }
 .standfirst {
   margin: 0 auto;
-  max-width: 36em;
+  text-align: left;
+  max-width: 62ch;
   font-size: 21px;
   line-height: 1.4;
   color: #dfe2e6;
@@ -133,7 +134,7 @@ body {
 
 .row { display: flex; flex-direction: column; margin-top: 28px; }
 .section-head + .row { margin-top: 0; }
-.row .text { order: 1; width: 100%; max-width: 40em; margin: 0 auto 28px; }
+.row .text { order: 1; width: 100%; max-width: 62ch; margin: 0 auto 28px; }
 .row .chart { order: 2; }
 .text h3 { margin: 0 0 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-align: left; }
 .text p { margin: 0 0 12px; font-size: 17.5px; line-height: 1.4; text-wrap: pretty; orphans: 2; widows: 2; }
@@ -159,14 +160,14 @@ body {
 
 .chart { margin: 0; max-width: 100%; overflow-x: auto; overflow-y: hidden; min-height: 120px; align-self: center; }   /* the chart sits in the middle of its card */
 .text h4 { margin: 0 0 18px; font-family: var(--display); font-weight: 600; font-size: 26px; line-height: 1.25; color: var(--ink); text-wrap: balance; }
-.chart-note { order: 3; width: 100%; max-width: 720px; margin: 14px auto 0; font-size: 13.5px; line-height: 1.4; color: #555; }   /* reading note under the chart, same left edge as the text */
+.chart-note { order: 3; width: 100%; max-width: 62ch; margin: 14px auto 0; font-size: 13.5px; line-height: 1.4; color: #555; }   /* reading note under the chart, same left edge as the text */
 .chart-error { margin: 0; padding: 16px 0; color: #8a1c1c; font-size: 15px; }
 #vg-tooltip-element { font-family: var(--body) !important; font-size: 14px !important; }
 
 
 .closing { margin-top: 96px; padding: 72px 0 72px; background: var(--hero); color: var(--hero-text); text-align: center; }
 .closing h2 { margin: 0 0 24px; font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4vw, 40px); line-height: 1.15; color: #fff; text-wrap: balance; }
-.closing p { margin: 0 auto 14px; max-width: 34em; font-size: 19px; line-height: 1.4; color: #dfe2e6; text-wrap: pretty; }
+.closing p { margin: 0 auto 14px; text-align: left; max-width: 62ch; font-size: 19px; line-height: 1.4; color: #dfe2e6; text-wrap: pretty; }
 .closing p:last-child { margin-bottom: 0; }
 .closing .key { color: #fff; }
 .closing .key::before { box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4); }
