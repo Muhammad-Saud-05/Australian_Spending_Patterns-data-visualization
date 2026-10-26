@@ -33,22 +33,19 @@ function pullTitle(spec) {
 function showTitle(target, info) {
   var holder = document.querySelector(target);
   if (!info || !holder) { return; }
-  var box = document.createElement("div");
-  box.className = "chart-title";
+  var row = holder.parentNode;
+  var text = row.querySelector(".text");
   var h = document.createElement("h4");
+  h.className = "chart-headline";
   h.textContent = info.headline;
-  box.appendChild(h);
+  var label = text && text.querySelector("h3");
+  if (label) { label.after(h); } else if (text) { text.prepend(h); }
   if (info.subtitle.length) {
-    var sub = document.createElement("div");
-    sub.className = "chart-subtitle";
-    info.subtitle.forEach(function (line) {
-      var p = document.createElement("p");
-      p.textContent = line;
-      sub.appendChild(p);
-    });
-    box.appendChild(sub);
+    var note = document.createElement("p");
+    note.className = "chart-note";
+    note.textContent = info.subtitle.join(" ");
+    row.appendChild(note);
   }
-  holder.parentNode.insertBefore(box, holder);
 }
 
 function applyPageFonts(spec) {
